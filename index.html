@@ -120,6 +120,17 @@
 		}
 		return false;
 	}
+	mobile(function() {
+  mobile("#test").swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      mobile(this).text("You swiped " + direction );  
+    }
+  });
+
+  //Set some options later
+  mobile("#test").swipe( {fingers:2} );
+});
 	function left() {
 		isMoved = false;
 		excludeIds = [];
