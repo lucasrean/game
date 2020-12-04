@@ -23,6 +23,25 @@
 	var score = 0;
 	
 	var excludeIds = [];
+	var myElement = document.getElementById('mobilewrap');
+var hammertime = new Hammer(myElement);
+hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+hammertime.on('swipeleft', function(ev) {
+  moveDirection(37);
+});
+
+hammertime.on('swiperight', function(ev) {
+  moveDirection(39);
+});
+
+hammertime.on('swipeup', function(ev) {
+  moveDirection(38);
+});
+
+hammertime.on('swipedown', function(ev) {
+  moveDirection(40);
+});
 
 	function load() {
 		//alert("load");
